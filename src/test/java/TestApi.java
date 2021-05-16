@@ -39,4 +39,20 @@ public class TestApi {
 		statusCode(200);
 	}
 
+	@Test
+	public void test3_patch() 
+	{
+		JSONObject testp = new JSONObject();
+		testp.put("name", "Amiel");
+		testp.put("job", "Father");
+
+		System.out.println(testp.toJSONString());
+
+		given().
+		body(testp.toJSONString()).
+		when().
+		patch("https://reqres.in/api/users/2").
+		then().
+		statusCode(200);
+	}
 }
