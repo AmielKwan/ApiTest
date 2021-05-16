@@ -66,4 +66,15 @@ public class TestApi {
 		statusCode(200).
 		log().all();
 	}
+	
+	@Test
+	public void test5_delete() 
+	{
+		System.out.println("Deleting");
+		when().
+		delete("https://reqres.in/api/users/2").
+		then().
+		statusCode(204).
+		log().all();;
+	}
 }
