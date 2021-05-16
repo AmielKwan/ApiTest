@@ -21,4 +21,22 @@ public class TestApi {
 		then().
 		statusCode(201);
 	}
+	
+	@Test
+	public void test2_put() 
+	{
+		JSONObject testp = new JSONObject();
+		testp.put("name", "Amiel");
+		testp.put("job", "Engineer");
+
+		System.out.println(testp.toJSONString());
+
+		given().
+		body(testp.toJSONString()).
+		when().
+		put("https://reqres.in/api/users/2").
+		then().
+		statusCode(200);
+	}
+
 }
