@@ -55,4 +55,15 @@ public class TestApi {
 		then().
 		statusCode(200);
 	}
+	
+	@Test
+	public void test4_get() 
+	{
+		System.out.println("Getting");
+		when().
+		get("https://reqres.in/api/users/2").
+		then().
+		statusCode(200).
+		log().all();
+	}
 }
